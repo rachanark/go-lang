@@ -8,5 +8,6 @@ RUN go mod download
 
 COPY . .
 
-RUN go build ./cmd/server
+#RUN go test ./... -cover
+#RUN cat coverage-all.out
 
