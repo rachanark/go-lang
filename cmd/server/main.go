@@ -26,9 +26,14 @@ import (
 // Version indicates the current version of the application.
 var Version = "1.0.0"
 
-var flagConfig = flag.String("config", "./config/local.yml", "path to the config file")
 
 func main() {
+	var app_env string
+	app_env = os.Getenv("APP_ENV")
+	var environment string
+	environment = "./config/" + app_env +".yml"
+	var flagConfig = flag.String("config", environment, "path to the config file")
+	
 	flag.Parse()
 	// create root logger tagged with server version
 	logger := log.New().With(nil, "version", Version)
