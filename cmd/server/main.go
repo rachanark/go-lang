@@ -28,10 +28,10 @@ var Version = "1.0.0"
 
 
 func main() {
-	var app_env string
-	app_env = os.Getenv("NODE_ENV")
+	var node_env string
+	node_env = os.Getenv("NODE_ENV")
 	var environment string
-	environment = "./config/" + app_env +".yml"
+	environment = "./config/" + node_env +".yml"
 	var flagConfig = flag.String("config", environment, "path to the config file")
 	
 	flag.Parse()
